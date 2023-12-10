@@ -9,7 +9,11 @@
 
 此文档的语言为简体中文，仅针对中文用户。For English? [Please click here](https://github.com/GeQ1an/MSI-B360M-MORTAR-HACKINTOSH-OPENCORE-EFI/blob/master/README.en.md).
 
-## 重要说明
+## 说明
+- 此 OpenCore EFI Forked自 [GeQ1an/MSI-B360M-MORTAR-HACKINTOSH-OPENCORE-EFI](https://github.com/GeQ1an/MSI-B360M-MORTAR-HACKINTOSH-OPENCORE-EFI)，并针对自己的硬件作微调，在此感谢 @GeQ1an 。
+- 硬件除了主板，基本上和之前的[ansonliao/EFI-ASRock-Z390-Phantom-Gaming-ITX](https://github.com/ansonliao/EFI-ASRock-Z390-Phantom-Gaming-ITX) 是一致的，因为此黑苹果的由来是因为 `Asrock Z390 Phantom Gaming ITX/AC` 黑苹果这块主板因为误操作意外烧了，故换了 `MSI B360M MORTAR` 这块主板。
+
+## 重要说明（来自[原作者](https://github.com/GeQ1an/MSI-B360M-MORTAR-HACKINTOSH-OPENCORE-EFI)）
 不知不觉已经更新此项目超过 3 年，但随着搭载 Apple Silicon 的 Mac Pro 发布，Mac 全线产品都已停止使用 x86 平台，Sonoma 或为最后一个支持 x86 平台的 macOS，且我也在此前将家用电脑更换为 Mac Studio，所以，此项目将在 Sonoma 发布正式版后一个月内停止更新，谢谢大家的使用。
 
 ## EFI 介绍
@@ -36,21 +40,16 @@
 
 ### 我的配置
 
-|            硬件 | 型号                                                   | 
-|---------------:|:-------------------------------------------------------|
-|            主板 | 微星 B360M 迫击炮                                       |
-|          处理器 | 英特尔酷睿 i5-9600K                                      |
-|            内存 | 光威悍将 8GB DDR4 2666MHz x 2                           |
-|            硬盘 | 西部数据 SN750 500GB                                    |
-|            显卡 | 公版 RX 570 4GB (VBIOS 品牌为微星)                       |
-|      无线 + 蓝牙 | 奋威 FV-T919 无线网卡 (BCM94360CD 双频 1750M + 蓝牙 4.0)  |
-|      机箱 + 电源 | 乔思伯 U3 + 台达 NX450                                  |
-|      散热 + 风扇 | 利民 AS120 + ARCTIC F12 PWM                            |
-|          显示器 | 飞利浦 276E8VJSB (27 英寸 4K 分辨率)                      |
-|  摄像头 + 麦克风 | LOGITUBO 928 自动对焦带双降噪麦克风摄像头                   |
-|            音箱 | 漫步者 R201T 北美版 2.1 桌面音箱                          |
-|            键盘 | iQunix F96 珊瑚海 (有线茶轴 RGB 版)                      |
-|            鼠标 | 罗技 MX Master 3 (使用优联连接，以方便在 BIOS 中使用)       |
+|            硬件 | 型号                                                               | 
+|---------------:|:------------------------------------------------------------------|
+|            主板 | 微星 B360M 迫击炮                                                   |
+|          处理器 | 英特尔酷睿 i5-9600K                                                  |
+|            内存 | Kingston DDR4 3200MHz 16GB 单条 x 2，酷兽 DDR4 2666MHz 16GB 单条 x 1 |
+|            硬盘 | 致态（ZhiTai）2TB (NVMe M.2，PCIe 4.0)                              |
+|            显卡 | 蓝宝石 RX 5500 XT 8G GDDR6                                         |
+|      无线 + 蓝牙 | BCM94360CD (双频 1750M + 蓝牙 4.0) + PCIE 转接卡                     |
+|      机箱 + 电源 | 先马趣造雪装豪华版（前面板带Type C）+ 海盗船SF450 SFX                    |
+|          显示器 | 优派 VX2831-4K-HD 28寸 4K                                          |
 
 ### 兼容的配置
 
@@ -73,6 +72,11 @@
 *Tips 3：选购硬盘建议避开三星，特别是 macOS Monterey 会因为 TRIM 的原因导致开机时间变长 (970 EVO 几乎全军覆没，980 PRO 听天由命)，详见 [Q&A 条目 12](#12-为什么升级-Monterey-后开机时间变长)。推荐选择西数 SN850 / SN750、英特尔 760P 等比较稳定的硬盘。*<br>
 
 ## 更新记录
+#### 2023.12.10
+* 更新 OpenCore 至 0.9.6 正式版
+* 更新和 KEXT 至 最新版
+* 支持 `macOS 13.6`
+
 #### 2023.09.13
 * 更新 OpenCore 至 0.9.5 正式版
 * 更新 Lilu \ AppleALC \ WhateverGreen \ NVMeFix  kexts 至官方最新版
@@ -387,6 +391,7 @@ OpenCore 拥有高度的可定制化，建议先参考下面的说明使用配�
       - USB Standby Power at S4/S5 [**允许**]
     - Windows操作系统的配置
       - Windows 10 WHQL支持 [**允许**] *(开启为「纯」UEFI 模式，否则为「兼容」UEFI 模式，推荐设置为允许)*
+      	+ 如果碰到 `OC: Driver xxxx.efi at 0 cannot be loaded - Access Denied!` 的问题，请尝试将此项设置为 [**禁止**]
       - MSI 快速开机 [**禁止**]
       - 快速开机 [**禁止**]
     - 唤醒事件设置

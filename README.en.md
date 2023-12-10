@@ -10,6 +10,10 @@
 Actually, my English is not fantastic. But I will try my best to translate, some content from Google Translate. 需要简体中文? [点此查看](https://github.com/GeQ1an/MSI-B360M-MORTAR-HACKINTOSH-OPENCORE-EFI/blob/master/README.md)。
 
 ## Important
+- This Repor is forked from [GeQ1an/MSI-B360M-MORTAR-HACKINTOSH-OPENCORE-EFI](https://github.com/GeQ1an/MSI-B360M-MORTAR-HACKINTOSH-OPENCORE-EFI), and update some configurations according to my specification, and thanks @GeQ1an here.
+- The hardware specification of this repo almost same as [ansonliao/EFI-ASRock-Z390-Phantom-Gaming-ITX](https://github.com/ansonliao/EFI-ASRock-Z390-Phantom-Gaming-ITX) except motherboard, as motherboard `Asrock Z390 Phantom Gaming ITX/AC` is damaged by some mistakes, then purchased `MSI B360M MORTAR` and this repo is forked and updated.
+
+## Important (From Forked Repo)
 Unknowingly, this project has been updated for more than 3 years, but with the release of the Mac Pro equipped with Apple Silicon, all Mac products have stopped using the x86 platform. Sonoma may be the last macOS that supports the x86 platform, and I also used it at home before. The computer is replaced by Mac Studio, so this project will stop updating within one month after Sonoma releases the official version. Thank you for your use.
 
 ## About
@@ -36,21 +40,16 @@ This EFI uses `iMac19,1` SMBIOS. Most users of MSI B360M MORTAR (includes TITANI
 
 ### Hardware List
 
-|          Specs | Details                                                   | 
-|---------------:|:----------------------------------------------------------|
-|          Board | MSI® B360M MORTAR                                         |
-|            CPU | Intel® Core™ i5-9600K (with Intel UHD Graphics 630)       |
-|         Memory | GLOWAY® Brave Warrior 8GB DDR4 2666MHz x 2                |
-|            SSD | Western Digital® WD_BLACK™ SN750 NVMe™ SSD 500GB          |
-|  Graphics Card | AMD® RX 570 4GB (Produced by MSI®)                        |
-|  Wireless Card | Fenvi® FV-T919 (BCM94360CD 1750M + Bluetooth 4.0)         |
-|   Case + Power | JONSBO® U3 + Delta® NX450                                 |
-|  Cooling + Fan | Thermalright® AS120 + ARCTIC® F12 PWM                     |
-|        Monitor | PHILIPS® 276E8VJSB (4K 27-inch)                           |
-|   Webcam + Mic | LOGITUBO® 928 Autofocus with dual noise cancellation Mic  |
-|        Speaker | EDIFIER® R201T 2.1 Active Speaker                         |
-|       Keyboard | iQunix® F96 CORAL SEA with Cherry MX Brown Switch         |
-|          Mouse | Logitech® MX Master 3 (Using Unifying USB Receiver)       |
+|          Specs | Details                                                                            | 
+|---------------:|:-----------------------------------------------------------------------------------|
+|          Board | MSI® B360M MORTAR                                                                  |
+|            CPU | Intel® Core™ i5-9600K (with Intel UHD Graphics 630)                                |
+|         Memory | Kingston DDR4 3200 16GB Single * 2, Cuso DDR4 2666 16GB Single * 1                 |
+|            SSD | ZhiTai TiPlus7100 2TB (M.2, PCIe 4.0)                                              |
+|  Graphics Card | Sapphire PULSE RX 5500 XT 8G GDDR6                                                 |
+|  Wireless Card | BCM94360CD (1750M + Bluetooth 4.0) + PCIe Adaptor                                  |
+|   Case + Power | [先马(SAMA)趣造1 雪装豪华版](https://item.jd.com/100024855117.html) + CORSAIR SF450 SFX                                   |
+|        Monitor | ViewSonic VX2831-4K-HD 28 inch (DP Connected)                                      |
 
 ### Compatible Hardware List
 
@@ -73,6 +72,11 @@ This EFI uses `iMac19,1` SMBIOS. Most users of MSI B360M MORTAR (includes TITANI
 *Tips 3：Try to avoid Samsung when buying hard drives, especially macOS Monterey will cause longer boot time due to TRIM (Almost all users have problems with the 970 EVO, and some users have problems with the 980 PRO), see [Q&A 12](#12-why-does-the-boot-time-take-longer-after-the-monterey-upgrade). It is recommended to choose a relatively stable hard drive such as Western Digital SN850 / SN750 and Intel 760P.*<br>
 
 ## Changelog
+#### December 10, 2023
+* Updated OpenCore to 0.9.6 official version
+* Updated KEXTs to the latest versions
+* Support macOS 13.6
+
 #### September 13, 2023
 * Updated OpenCore to 0.9.5 official version
 * Updated Lilu \ AppleALC \ WhateverGreen \ NVMeFix kexts to latest official version
